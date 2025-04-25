@@ -69,4 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     displayProducts();
+    
+    window.location.href = './confirmation.html';
 });
