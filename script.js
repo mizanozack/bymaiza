@@ -69,4 +69,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     displayProducts();
+
+    const savedOrder = localStorage.getItem('currentOrder');
+if (savedOrder) {
+  order = JSON.parse(savedOrder);
+  // Update quantities in the UI
+  for (const productId in order) {
+    if (order[productId].quantity > 0) {
+      document.getElementById(`qty-${productId}`).value = order[productId].quantity;
+    }
+  }
+
+    quantityInput.addEventListener('change', function() {
+  order[product.id] = { 
+    name: product.name, 
+    price: product.price, 
+    quantity: parseInt(this.value) || 0 
+  };
+  localStorage.setItem('currentOrder', JSON.stringify(order));
+  updateOrderSummary();
+}
 });
