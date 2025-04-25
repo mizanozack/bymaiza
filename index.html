@@ -3,26 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal Shop</title>
+    <title>Simple Order App</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="app-container">
-        <header>
-            <h1>minimal shop</h1>
-            <div class="cart-indicator" id="cart-count">0</div>
-        </header>
-        
-        <main>
-            <section class="products" id="product-list"></section>
-            
-            <section class="order-summary">
-                <h2>your selection</h2>
-                <div id="order-summary"></div>
-                <button id="place-order-btn">complete order</button>
-            </section>
-        </main>
+    <div class="container">
+        <h1>Our Products</h1>
+        <div id="product-list">
+            </div>
+        <h2>Your Order</h2>
+        <div id="order-summary">
+            <p>Your cart is empty.</p>
+        </div>
+        <button id="place-order-btn">Place Order</button>
     </div>
 
     <script src="script.js"></script>
