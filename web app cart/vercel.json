@@ -1,12 +1,16 @@
 {
     "routes": [
       {
-        "src": "/confirmation",
-        "dest": "/confirmation.html"
+        "src": "/confirmation.html",
+        "dest": "/confirmation.html",
+        "headers": {
+          "Cache-Control": "public, max-age=0, must-revalidate"
+        }
       },
       {
         "src": "/(.*)",
-        "dest": "/index.html"
+        "dest": "/index.html",
+        "status": 200
       }
     ]
   }
