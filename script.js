@@ -54,19 +54,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listener for the Place Order button
     placeOrderBtn.addEventListener('click', function() {
-        let orderDetails = 'Order Details:\n';
-        let total = 0;
-        for (const productId in order) {
-            if (order.hasOwnProperty(productId) && order[productId].quantity > 0) {
-                const item = order[productId];
-                const itemTotal = item.price * item.quantity;
-                orderDetails += `${item.name} x ${item.quantity} = $${itemTotal}\n`;
-                total += itemTotal;
-            }
+    let hasItems = false;
+    for (const productId in order) {
+        if (order[productId].quantity > 0) {
+            hasItems = true;
+            break;
         }
-        orderDetails += `\nTotal: $${total}`;
-        alert(orderDetails);
-    });
+    }
+    
+    if (hasItems) {
+        window.location.href = 'confirmation.html';
+    } else {
+        alert('Please add items to your cart before placing an order.');
+    }
+});
 
     displayProducts();
 
