@@ -101,3 +101,46 @@ hr {
 strong {
     color: #333;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        margin: 10px;
+        width: auto;
+    }
+
+    .product-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-item label {
+        margin-bottom: 8px;
+    }
+
+    input[type="number"] {
+        width: 100%;
+    }
+
+    #place-order-btn {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* Additional mobile styles */
+.btn {
+    display: block;
+    text-align: center;
+    background-color: #8B966A;
+    color: white;
+    padding: 12px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #7A8560;
+}
